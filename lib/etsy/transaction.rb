@@ -4,7 +4,7 @@ module Etsy
 
     attribute :id, :from => :transaction_id
     attribute :buyer_id, :from => :buyer_user_id
-    attributes :quantity, :listing_id, :order_id, :title
+    attributes :quantity, :listing_id, :order_id, :title, :variations
 
     association :image, :from => 'Images'
 
