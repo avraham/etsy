@@ -27,7 +27,7 @@ module Etsy
     end
 
     def transactions
-      @transactions ||= Transactions.find_all_by_receipt_id(id, oauth)
+      @transactions ||= Transaction.find_all_by_receipt_id(id, oauth)
     end
 
     private
