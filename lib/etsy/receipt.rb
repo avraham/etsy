@@ -4,6 +4,7 @@ module Etsy
 
     attribute :id, :from => :receipt_id
     attribute :buyer_id, :from => :buyer_user_id
+    attribute :transactions, :from => :Transactions
 
     attributes :order_id, :name, :first_line, :second_line, :city, :state, :zip, :country_id,
                :payment_email, :buyer_email, :creation_tsz, :message_from_buyer, :last_modified_tsz
