@@ -38,5 +38,10 @@ module Etsy
       @buyer ||= User.find(buyer_id)
     end
 
+    private
+    def oauth
+      oauth = (token && secret) ? {:access_token => token, :access_secret => secret} : {}
+    end
+
   end
 end
