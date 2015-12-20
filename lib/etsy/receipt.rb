@@ -30,5 +30,10 @@ module Etsy
       @transactions ||= Transactions.find_all_by_receipt_id(id, oauth)
     end
 
+    private
+    def oauth
+      oauth = (token && secret) ? {:access_token => token, :access_secret => secret} : {}
+    end
+
   end
 end
