@@ -6,6 +6,8 @@ module Etsy
     attribute :buyer_id, :from => :buyer_user_id
     attributes :quantity, :listing_id, :order_id, :title
 
+    association :image, :from => 'Images'
+
     def self.find_all_by_shop_id(shop_id, options = {})
       get_all("/shops/#{shop_id}/transactions", options)
     end
@@ -14,6 +16,10 @@ module Etsy
     #
     def self.find_all_by_buyer_id(user_id, options = {})
       get_all("/users/#{user_id}/transactions", options)
+    end
+
+    def self.find_all_by_receipt_id(receipt_id, options = {})
+      get_all("/receipts/#{receipt_id}/transactions", options)
     end
 
     # The collection of images associated with this transaction.
