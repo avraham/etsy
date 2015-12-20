@@ -8,7 +8,7 @@ module Etsy
     attributes :order_id, :name, :first_line, :second_line, :city, :state, :zip, :country_id,
                :payment_email, :buyer_email, :creation_tsz, :message_from_buyer, :last_modified_tsz
 
-    association :transactions, :from => 'Transactions'
+    association :transaction, :from => 'Transactions'
 
     def self.find_all_by_shop_id(shop_id, options = {})
       get_all("/shops/#{shop_id}/receipts", options)
